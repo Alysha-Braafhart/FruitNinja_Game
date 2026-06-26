@@ -12,3 +12,5 @@ De mechanic start als de speler met de muis over een stuk fruit gaat
 ## Game Fruit Slicer
 ![alt text](gif/NewFruitSlicer.gif)
 (Voor een of ander reden kan ik me gif blijkbaar niet op me readme tevoren laten komen het is namelijk wel te zien in de map)
+
+![alt text](gif/SoundGif.gif)
