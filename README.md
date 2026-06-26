@@ -10,4 +10,4 @@
 De mechanic start als de speler met de muis over een stuk fruit gaat
 
 ## Game Fruit Slicer
-![alt text](gif/Jun-26-2026 17-14-31.gif)
+![alt text](gif/FruitSlicer.gif)
