@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class SpawnPoint : MonoBehaviour
 {
@@ -8,10 +9,13 @@ public class SpawnPoint : MonoBehaviour
     [SerializeField] private float rotationSpeed = 1f;
     [SerializeField] private float maxRotationAngle = 35f;
 
+    private AudioSource audioSource;
+
     private float initialZ;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         StartCoroutine(SpawnRoutine());
         initialZ = transform.eulerAngles.z;
     }
@@ -27,6 +31,7 @@ public class SpawnPoint : MonoBehaviour
         while (true)
         {
             Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
+            audioSource.Play();
             yield return new WaitForSeconds(spawnInterval);
         }
     }

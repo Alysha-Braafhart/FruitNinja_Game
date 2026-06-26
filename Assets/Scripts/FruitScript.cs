@@ -5,11 +5,13 @@ public class FruitScript : MonoBehaviour
 {
     private float _launchForce = 12f;
     int waardeHit = 100;
+    private ParticleSystem ps;
     void Start()
     {
+         ps = GetComponent<ParticleSystem>();
 
-
-            this.gameObject.GetComponent<Rigidbody2D>().AddForce(this.gameObject.transform.up * _launchForce, ForceMode2D.Impulse);
+        ps?.Stop();
+        this.gameObject.GetComponent<Rigidbody2D>().AddForce(this.gameObject.transform.up * _launchForce, ForceMode2D.Impulse);
     }
 
     // Update is called once per frame
@@ -17,6 +19,9 @@ public class FruitScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+             ps?.Stop();
+            
+            ps?.Play();
             ScoreManager.Instance.AddScore(waardeHit);
             Destroy(gameObject);
         }
